@@ -1,5 +1,8 @@
 const mongoose =require('mongoose');
 const MovieSchema = mongoose.Schema({
+  movieId:{
+    type:String,
+  },
     moviename:{
         type:String,
         required:true,
@@ -13,16 +16,13 @@ const MovieSchema = mongoose.Schema({
             type:String,
             required:true,
           },
-          booked_details: {
-            type:String,
-            // required:true,
-          },
+    
           ticket_rates:{
             type:String,
             // required:true,
            },
            time:{
-            type:String,
+            type:[String],
             // required:true,
            },
            rating:{
@@ -33,6 +33,7 @@ const MovieSchema = mongoose.Schema({
             type:String,
             // required:true,
            },
+           date: [String],
            number_seats:{
             type:String,
             // required:true,
@@ -44,11 +45,9 @@ const MovieSchema = mongoose.Schema({
            review: {
             type:String,
             },
-            
-         star :{
+           numtickets:{
             type:String,
-            
-          },
+            },
           cast_details: {
             type: String,
           },

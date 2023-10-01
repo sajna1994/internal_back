@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 const UserSchema = mongoose.Schema({
+    userId: {
+        String,
+    },
     username: {
         type: String,
         required: true
@@ -16,6 +19,11 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
+//     booked_details: {
+//         type: mongoose.Schema.Types.ObjectId,
+// ref: 'Booking',
+// required: true,
+//       },
     role: {
         type: String,
         required: true
