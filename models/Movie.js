@@ -1,7 +1,13 @@
 const mongoose =require('mongoose');
 const MovieSchema = mongoose.Schema({
-  movieId:{
-    type:String,
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User', // Replace 'User' with your user model name
+    required: true,
+  },
+  moviename: {
+    type: String,
+    required: true, // This field is required
   },
     moviename:{
         type:String,
@@ -25,7 +31,7 @@ const MovieSchema = mongoose.Schema({
             type:[String],
             // required:true,
            },
-           rating:{
+           poster:{
             type:String,
             // required:true,
            },

@@ -2,20 +2,46 @@
 const mongoose = require('mongoose');
 
 const bookingSchema = new mongoose.Schema({
- 
 
-  bookingId: String,
-  movieId: String,
-  userId: String,
+
+  movieId: {
+    type: String,
+
+    // type: mongoose.Schema.Types.ObjectId,
+    ref: "Movie",
+    required: true,
+  },
+  userId: {
+    type: String,
+    ref: 'User', // Replace 'User' with your user model name
+    required: true,
+  },
+  
+  date: {
+    type: Date,
+    required: true,
+
+  },
+  seatNumbers: {
+    type: [String],
+    required: true,
+  },
+  ticketPrice: {
+    type: Number,
+    required: true,
+  },
+  totalPrice: {
+    type: Number,
+    required: true,
+  },
+  movieName: { // Add the movieName field
+    type: String,
+    required: true,
+  },
   email:String,
-  date: String,
-  seatNumbers: [String],
-  ticketPrice: String,
-  totalPrice: String,
-  movieName: String,
- time:String,
+  message:String,
 });
 
 const Booking = mongoose.model('Booking', bookingSchema);
 
-module.exports = Booking;
+module.exports = Booking;
